@@ -2,5 +2,10 @@
     "pages": [
         "pages/classic/classic"
     ],
-    "sitemapLocation": "sitemap52.json"
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#3281ff",
+        "navigationBarTitleText": "掘金",
+        "navigationBarTextStyle": "white"
+    }
 }
