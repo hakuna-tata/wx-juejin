@@ -1,0 +1,5 @@
+.vscode
+.idea/
+project.config.json
+sitemap.json
+node_modules
