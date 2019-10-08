@@ -3,9 +3,11 @@
         "pages/classic/classic"
     ],
     "window": {
-        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#3281ff",
         "navigationBarTitleText": "掘金",
-        "navigationBarTextStyle": "white"
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "default",
+        "backgroundColor": "#ffffff",
+        "enablePullDownRefresh": false
     }
 }
