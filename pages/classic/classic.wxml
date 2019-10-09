@@ -1,1 +1,12 @@
-<w-empty />
+<view class="container">
+    <image class="bg-image" src="./images/classic_bg.png"  mode='widthFix'></image>
+    <view class="top">
+        <view class="wrapper">
+            <image src="./images/classic_diamond.png"  mode='widthFix'></image>
+            <view>相信科技的力量</view>
+        </view>
+    </view>
+    <view class="bottom">
+        <image src="./images/classic_bottom.png"  mode='widthFix'></image>
+    </view>
+</view>

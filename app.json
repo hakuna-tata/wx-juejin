@@ -1,6 +1,11 @@
 {
     "pages": [
-        "pages/classic/classic"
+        "pages/classic/classic",
+        "pages/home/home",
+        "pages/feidian/feidian",
+        "pages/search/search",
+        "pages/xiaoce/xiaoce",
+        "pages/my/my"
     ],
     "window": {
         "navigationBarBackgroundColor": "#3281ff",
@@ -9,5 +14,44 @@
         "navigationStyle": "default",
         "backgroundColor": "#ffffff",
         "enablePullDownRefresh": false
-    }
+    },
+    "tabBar": {
+        "color": "#abb4bf",
+        "selectedColor": "#3281ff",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "主页",
+                "iconPath": "images/tab_home.png",
+                "selectedIconPath": "images/tab_home_activity.png"
+            },
+            {
+                "pagePath": "pages/feidian/feidian",
+                "text": "沸点",
+                "iconPath": "images/tab_feidian.png",
+                "selectedIconPath": "images/tab_feidian_activity.png"
+            },
+            {
+                "pagePath": "pages/search/search",
+                "text": "搜索",
+                "iconPath": "images/tab_explore.png",
+                "selectedIconPath": "images/tab_explore_activity.png"
+            },
+            {
+                "pagePath": "pages/xiaoce/xiaoce",
+                "text": "小册",
+                "iconPath": "images/tab_xiaoce.png",
+                "selectedIconPath": "images/tab_xiaoce_activity.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "images/tab_profile.png",
+                "selectedIconPath": "images/tab_profile_activity.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }
