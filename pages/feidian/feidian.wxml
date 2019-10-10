@@ -1,2 +1,1 @@
-<!--pages/feidian/feidian.wxml-->
-<text>pages/feidian/feidian.wxml</text>
+<w-feidianItem />

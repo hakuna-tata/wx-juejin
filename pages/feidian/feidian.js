@@ -1,4 +1,7 @@
-// pages/feidian/feidian.js
+import { FeiDianModel } from '../../models/feidian.js'
+
+const FeiDianClass = new FeiDianModel()
+
 Page({
 
     /**
@@ -12,7 +15,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        FeiDianClass.getHotRecommendList()
     },
 
     /**

@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+    "navigationBarTitleText": "沸点",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "w-feidianItem": "/components/feidianItem/index"
+    }
 }
