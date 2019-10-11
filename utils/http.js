@@ -1,3 +1,10 @@
+
+const tips = {
+    400: 'Bad Request',
+    401: 'Unauthorized',
+    404: 'Not Found',
+}
+
 export class HTTP{
     request(params){
         let {url, method="GET", data={}} = params
@@ -20,19 +27,19 @@ export class HTTP{
                     resolve(res.data)
                 }else{
                     reject()
-                    this._show_error()
+                    this._show_error(code)
                 }
             },
-            fail: () => {
+            fail: (err) => {
                 reject()
-                this._show_error()
+                this._show_error(err.errMsg)
             }
         })
     }
 
-    _show_error(){
+    _show_error(error){
         wx.showToast({
-            title: "网络错误", 
+            title: tips[error] || "网络开小差,请稍后再试", 
             icon:'none',
             duration:2000
         }) 

@@ -5,7 +5,8 @@
         "pages/feidian/feidian",
         "pages/search/search",
         "pages/xiaoce/xiaoce",
-        "pages/my/my"
+        "pages/my/my",
+        "pages/login/login"
     ],
     "window": {
         "navigationBarBackgroundColor": "#3281ff",
@@ -46,7 +47,7 @@
             },
             {
                 "pagePath": "pages/my/my",
-                "text": "我的",
+                "text": "我",
                 "iconPath": "images/tab_profile.png",
                 "selectedIconPath": "images/tab_profile_activity.png"
             }
