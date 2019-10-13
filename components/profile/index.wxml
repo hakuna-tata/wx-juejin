@@ -1,0 +1,12 @@
+<view class="profile">
+  <view class="info">
+    <image src="{{ userInfo.avatarLarge ? userInfo.avatarLarge : defaultImage}}"></image>
+    <view class="text">
+      <view class="name">{{ userInfo.username || '登录/注册' }}</view>
+      <view>{{userInfo.jobTitle || '添加职位'}} @ {{userInfo.company || '添加公司'}}</view>
+    </view>
+  </view>
+  <view class="more">
+    <image src="images/profile_arrow.png"></image>
+  </view>
+</view>

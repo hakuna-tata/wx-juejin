@@ -1,3 +1,6 @@
 <view class="container">
-    <!-- <w-card count="{{}}"/> -->
+    <w-profile />
+    <block wx:for="{{cardData}}" wx:key="index">
+      <w-card card="{{item}}"/>
+    </block>
 </view>

@@ -1,0 +1,7 @@
+.container{
+  margin-bottom: 20rpx;
+}
+
+.container > w-card:nth-last-child(4) > view{
+  margin-bottom: 20rpx;
+}

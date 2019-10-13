@@ -1,7 +1,6 @@
-// components/card/index.js
 Component({
     properties: {
-        count:Number
+      card:Object
     },
 
     data: {

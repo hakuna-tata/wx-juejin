@@ -1,3 +1,33 @@
 .hover-class {
   background: #f2f2f2 !important;
 }
+
+.card{
+  height: 90rpx;
+  padding: 0 40rpx;
+  border-bottom: 1rpx solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.card image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 40rpx;
+}
+
+.card .title{
+  flex: 1;
+  font-size: 32rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+
+.card .count {
+  font-size: 24rpx;
+  color: #abb4bf;
+}
