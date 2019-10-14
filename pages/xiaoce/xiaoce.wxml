@@ -1,2 +1,3 @@
-<!--pages/xiaoce/xiaoce.wxml-->
-<text>pages/xiaoce/xiaoce.wxml</text>
+<block wx:for="{{xiaoceList}}" wx:key='{{item._id}}'>
+  <w-xiaoceItem list='{{item}}' />
+</block>

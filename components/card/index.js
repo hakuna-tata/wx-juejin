@@ -2,13 +2,12 @@ Component({
     properties: {
       card:Object
     },
-
     data: {
 
     },
     methods: {
         tapCardItem(e){
-            console.log(e)
+            this.triggerEvent('tapCard', e.currentTarget.dataset)
         }
     }
 })

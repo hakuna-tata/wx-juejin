@@ -7,6 +7,8 @@ App({
             // 登录
             loginRequestUrlByMobile: 'https://juejin.im/auth/type/phoneNumber',
             loginRequestUrlByEMail: 'https://juejin.im/auth/type/email',
+            // 小册
+            xiaoceRequestUrl: 'https://xiaoce-timeline-api-ms.juejin.im/v1',
             // 沸点
             shortMsgMsRequestUrl: 'https://short-msg-ms.juejin.im/v1',
             // 我

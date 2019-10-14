@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+      "w-xiaoceItem":"/components/xiaoceItem/index"
+  }
 }

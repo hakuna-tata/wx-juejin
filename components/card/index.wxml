@@ -1,7 +1,7 @@
-<view class="card" hover-class='hover-class' bind:tap="tapCardItem" data-url="www.baidu.com">
+<view class="card" hover-class='hover-class' bind:tap="tapCardItem" data-url="{{card.url}}" data-open="{{card.open}}">
    <view class="title">
         <image src="{{card.image}}"/>
         <view>{{card.title}}</view>
    </view>
-   <view class='count'>0</view>
+   <view class='count'>{{card.count}}</view>
 </view>
