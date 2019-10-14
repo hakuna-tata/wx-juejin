@@ -1,2 +1,12 @@
-<!--components/xiaoceItem/index.wxml-->
-<text>components/xiaoceItem/index.wxml</text>
+<view class="list" catchtap="tapXiaoCe">
+    <image class="poster" src="{{img}}"></image>
+    <view class="info">
+      <view class="title">{{list.title}}</view>
+      <view class="author">{{list.userData && list.userData.username}}</view>
+      <view class="others">
+        <view>
+          <text class="isFinished" wx:if="{{!list.isFinished}}">预售 · </text>
+          <text>{{list.lastSectionCount}}小节 · {{list.buyCount}}人已购买</text></view>
+      </view>
+    </view>
+</view>

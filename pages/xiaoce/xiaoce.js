@@ -14,15 +14,21 @@ Page({
         })
         this.getXiaoceList()
     },
-
+    onReachBottom() {
+      console.log('bottom')
+    },
     getXiaoceList(){
         let auth = this.data.auth
         XiaoCeClass.getXiaoceList({
             src: 'web',
-            uid: auth.uid,
+            uid: auth.uid || "",
             device_id: auth.clientId,
             token: auth.token,
             pageNum: this.data.pageNum,
+        }).then(res => {
+          this.setData({
+            xiaoceList:res.d
+          })
         })
     }
 })

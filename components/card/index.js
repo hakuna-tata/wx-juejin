@@ -3,7 +3,7 @@ Component({
       card:Object
     },
     data: {
-
+     url: "/pages/personal/personal"
     },
     methods: {
         tapCardItem(e){

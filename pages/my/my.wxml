@@ -1,5 +1,5 @@
 <view class="container">
-    <w-profile userInfo="{{userInfo}}"/>
+    <w-profile userInfo="{{userInfo}}" bind:tapProfile="toDetail"/>
     <block wx:for="{{cardData}}" wx:key="index">
       <w-card card="{{item}}" bind:tapCard="toDetail"/>
     </block>

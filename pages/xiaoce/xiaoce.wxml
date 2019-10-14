@@ -1,3 +1,5 @@
-<block wx:for="{{xiaoceList}}" wx:key='{{item._id}}'>
-  <w-xiaoceItem list='{{item}}' />
-</block>
+<view class="container">
+  <block wx:for="{{xiaoceList}}" wx:key='{{item._id}}'>
+    <w-xiaoceItem list='{{item}}' />
+  </block>
+</view>

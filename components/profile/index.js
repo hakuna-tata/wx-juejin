@@ -8,6 +8,8 @@ Component({
   },
 
   methods: {
-
+    tapProfile(e){
+      this.triggerEvent('tapProfile', e.currentTarget.dataset)
+    }
   }
 })

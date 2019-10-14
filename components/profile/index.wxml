@@ -1,4 +1,4 @@
-<view class="profile">
+<view class="profile" bind:tap="tapProfile" data-url="{{url}}">
   <view class="info">
     <image src="{{ userInfo.avatarLarge ? userInfo.avatarLarge : defaultImage}}"></image>
     <view class="text">
