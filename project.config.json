@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,13 @@
 					"id": -1,
 					"name": "小册",
 					"pathName": "pages/xiaoce/xiaoce",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "发现",
+					"pathName": "pages/search/search",
 					"query": "",
 					"scene": null
 				}

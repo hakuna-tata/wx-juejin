@@ -4,31 +4,60 @@ const XiaoCeClass = new XiaoCeModel()
 
 Page({
     data: {
-        auth:null,
-        xiaoceList:[],
-        pageNum: 1,
+        locked:false,
+        hasMore:true,
+        loading: false,
     },
     onShow: function () {
         this.setData({
-            auth: wx.getStorageSync('auth')
+            auth: wx.getStorageSync('auth'),
+            xiaoceList: [],
+            pageNum:1
         })
-        this.getXiaoceList()
+        this._getXiaoceList()
     },
     onReachBottom() {
-      console.log('bottom')
+        this._getXiaoceList()
     },
-    getXiaoceList(){
-        let auth = this.data.auth
-        XiaoCeClass.getXiaoceList({
-            src: 'web',
-            uid: auth.uid || "",
-            device_id: auth.clientId,
-            token: auth.token,
-            pageNum: this.data.pageNum,
-        }).then(res => {
-          this.setData({
-            xiaoceList:res.d
-          })
+    _getXiaoceList(){
+        if (this.data.locked){
+            return
+        }
+        if(this.data.hasMore){
+            this.setData({
+                locked: true,
+                loading: true
+            })
+            XiaoCeClass.getXiaoceList({
+                src: 'web',
+                uid: this.data.auth.uid || "",
+                device_id: this.data.auth.clientId,
+                token: this.data.auth.token,
+                pageNum: this.data.pageNum,
+            }).then(res => {
+                if (res.s === 2){
+                    this.setData({
+                        hasMore: false,
+                        loading: false
+                    })
+                }
+                this.setData({
+                    xiaoceList: this.data.xiaoceList.concat(res.d),
+                    pageNum: this.data.pageNum + 1,
+                    locked: false,
+                    loading: false
+                })
+            }).catch(() => {
+                // 防死锁
+                this.setData({
+                    locked: false
+                })
+            })
+        }   
+    },
+    toDetail(e){
+        wx.navigateTo({
+            url: `/pages/xiaocedetail/xiaocedetail?id=${e.detail.id}`,
         })
     }
 })

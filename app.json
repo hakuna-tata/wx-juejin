@@ -22,7 +22,7 @@
         "list": [
             {
                 "pagePath": "pages/home/home",
-                "text": "主页",
+                "text": "首页",
                 "iconPath": "images/tab_home.png",
                 "selectedIconPath": "images/tab_home_activity.png"
             },
@@ -34,7 +34,7 @@
             },
             {
                 "pagePath": "pages/search/search",
-                "text": "搜索",
+                "text": "发现",
                 "iconPath": "images/tab_explore.png",
                 "selectedIconPath": "images/tab_explore_activity.png"
             },

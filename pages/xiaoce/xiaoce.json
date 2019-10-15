@@ -1,5 +1,7 @@
 {
-  "usingComponents": {
-      "w-xiaoceItem":"/components/xiaoceItem/index"
-  }
+    "navigationBarTitleText": "小册",
+    "usingComponents": {
+        "w-xiaoceItem":"/components/xiaoceItem/index",
+        "w-loading": "/components/loading/index"
+    }
 }

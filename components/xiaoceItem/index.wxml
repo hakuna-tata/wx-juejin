@@ -1,4 +1,4 @@
-<view class="list" catchtap="tapXiaoCe">
+<view class="list" catchtap="tapXiaoCeItem" data-id="{{list._id}}">
     <image class="poster" src="{{img}}"></image>
     <view class="info">
       <view class="title">{{list.title}}</view>

@@ -1,0 +1,11 @@
+.loading-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.loading {
+    position: relative;
+    left:50%;
+    top:20rpx;
+}

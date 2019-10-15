@@ -14,6 +14,8 @@ Component({
       img:""
     },
     methods: {
-
+        tapXiaoCeItem(e){
+            this.triggerEvent("tapXiaoCe", e.currentTarget.dataset)
+        }
     }
 })

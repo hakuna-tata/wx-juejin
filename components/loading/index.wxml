@@ -1,0 +1,3 @@
+<view class="spinner">
+  <view class="double-bounce"></view>
+</view>

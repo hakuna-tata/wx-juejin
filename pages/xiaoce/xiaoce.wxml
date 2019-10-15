@@ -1,5 +1,19 @@
 <view class="container">
-  <block wx:for="{{xiaoceList}}" wx:key='{{item._id}}'>
-    <w-xiaoceItem list='{{item}}' />
-  </block>
+    <block wx:for="{{xiaoceList}}" wx:key="{{item._id}}">
+        <w-xiaoceItem list='{{item}}' bind:tapXiaoCe="toDetail"/>
+    </block>
+    <w-loading class="{{tool.className(pageNum)}}" wx:if="{{loading}}"/>
 </view>
+
+<wxs module="tool">
+    var className = function(number){
+        if(number === 1){
+            return "loading-center"
+        }
+        return "loading"
+    }
+
+    module.exports = {
+        className:className
+    }
+</wxs>

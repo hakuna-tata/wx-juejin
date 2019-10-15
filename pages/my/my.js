@@ -74,8 +74,8 @@ Page({
             auth:wx.getStorageSync('auth')
         })
         if (this.data.auth) {
-            this.getUserInfo()
-            this.userNotificationNum()
+            this._getUserInfo()
+            this._userNotificationNum()
         } else {
             this.setData({
                 userInfo: {},
@@ -83,7 +83,7 @@ Page({
         }
     },
 
-    getUserInfo() {
+    _getUserInfo() {
         let auth = this.data.auth
         MyClass.getUserInfo({
             src: 'web',
@@ -108,7 +108,7 @@ Page({
         })
     },
 
-    userNotificationNum() {
+    _userNotificationNum() {
         let auth = this.data.auth
         MyClass.userNotificationNum({
             src: 'web',
