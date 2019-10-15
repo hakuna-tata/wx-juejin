@@ -8,7 +8,7 @@ Page({
         hasMore:true,
         loading: false,
     },
-    onShow: function () {
+    onLoad: function () {
         this.setData({
             auth: wx.getStorageSync('auth'),
             xiaoceList: [],
