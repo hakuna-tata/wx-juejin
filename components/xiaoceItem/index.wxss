@@ -6,10 +6,6 @@
   background: #fff;
 }
 
-.list:last-child {
-  border-bottom: none;
-}
-
 .list .poster {
   width: 130rpx;
   height: 182rpx;

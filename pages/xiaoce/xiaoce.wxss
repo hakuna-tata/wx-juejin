@@ -1,3 +1,7 @@
+.container > w-xiaoceItem:last-of-type {
+  border-bottom: none;
+}
+
 .loading-center {
     position: absolute;
     top: 50%;
