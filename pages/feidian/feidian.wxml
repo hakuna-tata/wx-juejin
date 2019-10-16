@@ -1,1 +1,6 @@
-<w-feidianItem />
+<view class="container">
+    <w-swiper list="{{recommendList}}" swiperHeight="{{swiperHeight}}" bind:tapSwiper="toDetail"/>
+    <block wx:for="{{postList}}" wx:key="{{item.node.id}}">
+        <w-feidianItem posts="{{item}}"/>
+    </block>
+</view>

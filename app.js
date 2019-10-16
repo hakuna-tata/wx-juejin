@@ -11,6 +11,7 @@ App({
             xiaoceRequestUrl: 'https://xiaoce-timeline-api-ms.juejin.im/v1',
             // 沸点
             shortMsgMsRequestUrl: 'https://short-msg-ms.juejin.im/v1',
+            dongtaiListRequestUrl: 'https://web-api.juejin.im/query',
             // 我
             apiRequestUrl: 'https://user-storage-api-ms.juejin.im/v1',
             notifyRequestUrl: 'https://ufp-api-ms.juejin.im/v1'

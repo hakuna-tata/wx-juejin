@@ -1,2 +1,62 @@
-<!--components/feidianItem/index.wxml-->
-<text>components/feidianItem/index.wxml</text>
+<wxs module="filters" src="../../filters/filter.wxs" />
+<view class="box">
+    <view class="user">
+        <image class="avatar" mode="aspectFill" src="{{filters.ShowSrc(actor.avatarLarge) || defaultAvarar}}"
+            data-actor="{{actor}}" catchtap="capUser"
+        />
+        <view class="others">
+            <view class="l">
+                <view>{{actor.username}}</view>
+                <view class="jobtitle">
+                    <text wx:if='{{actor.jobTitle}}'>{{actor.jobTitle}}</text>
+                    <text wx:if='{{actor.jobTitle && actor.company}}'> @ {{actor.company}} </text>
+                    <text wx:if='{{actor.jobTitle}}'> · </text>
+                    <text>{{filters.TimeBefore(target.createdAt)}}</text>
+                </view>
+            </view>
+            <view class="r">
+                <image class="more" src="{{moreSrc}}"/>
+            </view>
+        </view>
+    </view>
+
+    <text decode class="content">{{target.content}}</text>
+    <view class="topic" wx:if="{{target.urlTitle || target.url}}">
+        <view class="desc">
+            <view>{{target.urlTitle}}</view>
+            <view class="url">{{filters.GetUrlHostName(target.url)}}</view>
+        </view>
+        <image wx:if="{{target.urlPic}}" src="{{target.urlPic}}" mode="aspectFill"></image>
+    </view>
+    <view class="pictures" wx:if="{{target.pictures && target.pictures.length}}">
+        <!-- 大于等于两张图片 -->
+    <view data-index="{{index}}" data-urls="{{target.pictures}}" catchtap='preview' class="picture" 
+          style="width:33.33%" 
+          wx:key="{{index}}" wx:for="{{target.pictures}}" wx:for-item="i" wx:if="{{target.pictures.length >= 2}}"
+    >
+        <image wx:key="{{index}}" style="height:228rpx;" mode="aspectFill" src="{{filters.ShowSrc(i)}}"></image>
+    </view>
+    <!-- 一张图片 -->
+    <view data-index="{{index}}" data-urls="{{target.pictures}}" catchtap='preview' class="picture" style="width:80%" 
+          wx:if="{{target.pictures.length === 1}}"
+    >
+        <image mode="widthFix" src="{{filters.ShowSrc(target.pictures[0])}}"></image>
+    </view>
+    </view>
+    <view wx:if="{{target.topic && target.topic.title}}" class="tag">{{target.topic.title}}</view>
+
+    <view class="lists">
+        <view class="i">
+            <image src="{{target.viewerHasLiked ? likeSrc : disLikeSrc}}"></image>
+            <text>{{ target.likeCount || '赞' }}</text>
+        </view>
+        <view class="i">
+            <image src="{{replySrc}}"></image>
+            <text>{{ target.commentCount || '评论' }}</text>
+        </view>
+        <view class="i">
+            <image src="{{shareSrc}}"></image>
+            <button data-item='{{posts}}' plain='true' open-type='share' class='share'></button>
+        </view>
+    </view>
+</view>

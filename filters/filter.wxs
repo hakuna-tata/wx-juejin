@@ -1,0 +1,50 @@
+var ShowSrc = function (src) {
+    if (src) {
+        var imageSrc = "https://images.weserv.nl/?url=" + src.replace("https://", "")
+        return imageSrc
+    }
+    return ""
+}
+
+var TimeBefore = function (date) {
+    if (!date) {
+        return '';
+    }
+    var rexp = getRegExp('TZ', 'g');
+    date = date.replace(rexp, ' ');
+    var dvalue = parseInt(getDate().getTime()) - parseInt(getDate(date).getTime());
+    var minTime = 60 * 1000;
+    var hourTime = 60 * 60 * 1000;
+    var dayTime = 24 * hourTime;
+    var monthTime = 30 * dayTime;
+    var yearTime = 12 * monthTime;
+    if (dvalue < minTime) {
+        return '刚刚';
+    } else if (dvalue >= minTime && dvalue < hourTime) {
+        return parseInt(dvalue / minTime) + '分钟前';
+    } else if (dvalue >= hourTime && dvalue < dayTime) {
+        return parseInt(dvalue / hourTime) + '小时前';
+    } else if (dvalue >= dayTime && dvalue < monthTime) {
+        return parseInt(dvalue / dayTime) + '天前';
+    } else if (dvalue >= monthTime && dvalue < yearTime) {
+        return parseInt(dvalue / monthTime) + '月前';
+    } else if (dvalue >= yearTime) {
+        return parseInt(dvalue / yearTime) + '年前';
+    }
+}
+
+var GetUrlHostName = function (url) {
+    if (!url) {
+        return '';
+    }
+    var arrUrl = url.split('//');
+    var start = arrUrl[1] ? arrUrl[1].indexOf('/') : arrUrl[0].indexOf('/');
+    var relUrl = arrUrl[1] ? arrUrl[1].substring(0, start) : arrUrl[0].substring(0, start);
+    return relUrl;
+}
+
+module.exports = {
+    ShowSrc: ShowSrc,
+    TimeBefore: TimeBefore,
+    GetUrlHostName: GetUrlHostName
+}

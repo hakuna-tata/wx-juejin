@@ -7,19 +7,20 @@ const tips = {
 
 export class HTTP{
     request(params){
-        let {url, method="GET", data={}} = params
+        let {url, method="GET", data={}, header} = params
         return new Promise((resolve,reject) => {
-            this._request(url, method, data, resolve, reject)
+            this._request(url, method, data, header, resolve, reject)
         })
     }
 
-    _request(url, method, data, resolve, reject){
+    _request(url, method, data, header, resolve, reject){
         wx.request({
             url,
             method,
             data,
             header:{
                 'content-type':'application/json',
+                ...header
             },
             success:(res)=> {
                 const code = res.statusCode.toString()

@@ -2,6 +2,7 @@
     "navigationBarTitleText": "沸点",
     "enablePullDownRefresh": true,
     "usingComponents": {
+        "w-swiper": "/components/swiper/index",
         "w-feidianItem": "/components/feidianItem/index"
     }
 }

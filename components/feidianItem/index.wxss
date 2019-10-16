@@ -1,1 +1,131 @@
-/* components/feidianItem/index.wxss */
+.box{
+    overflow:hidden;
+    margin-bottom: 20rpx;
+    background: #fff;
+}
+.user {
+  display: flex;
+  padding: 20rpx 30rpx;
+}
+.user .avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.user .others {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.user .others .l {
+  flex: 1;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.user .others .jobtitle {
+  font-size: 24rpx;
+  color: #999;
+}
+.more {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+
+
+.content {
+  display: block;
+  margin: 20rpx 30rpx;
+  word-break: break-all;
+}
+.pictures {
+  padding: 0 30rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.picture image {
+  width: 100%;
+  border: 1px solid #efefef;
+  display: block;
+}
+.topic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30rpx 20rpx;
+  padding: 20rpx 30rpx;
+  background: #F4F6F9;
+  border-radius: 4rpx;
+}
+.topic .desc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100rpx;
+  padding-right: 30rpx;
+}
+.topic .url {
+  font-size: 22rpx;
+  color: #999;
+}
+.topic image {
+  width: 100rpx;
+  height: 100rpx;
+  flex-shrink: 0;
+}
+.tag {
+  font-size: 22rpx;
+  margin: 0 30rpx 20rpx;
+  padding: 0 20rpx;
+  display: inline-block;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  color: #3281ff;
+  border: 1rpx solid #3281ff;
+  border-radius: 18rpx;
+}
+
+
+
+
+.lists {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1rpx solid #efefef;
+  height: 80rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.lists image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+  position: relative;
+  z-index: 2;
+}
+.lists .i {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.lists button.share {
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

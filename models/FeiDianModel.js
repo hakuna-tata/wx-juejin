@@ -9,4 +9,27 @@ export class FeiDianModel extends HTTP{
             data
         })
     }
+
+    getDongTaiList(after){
+        return this.request({
+            url: config.dongtaiListRequestUrl,
+            method: "POST",
+            header: {
+                "X-Agent": "Juejin/Web",
+            },
+            data:{
+                operationName: "",
+                query: "",
+                variables: {
+                    size: 20,
+                    after
+                },
+                extensions: {
+                    query: {
+                        id: "964dab26a3f9997283d173b865509890"
+                    }
+                }
+            }
+        })
+    }
 }
