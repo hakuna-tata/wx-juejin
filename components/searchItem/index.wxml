@@ -1,0 +1,26 @@
+<wxs module='filters' src='../../filters/filter.wxs'></wxs>
+<view class="item {{ graphics ? 'graphics' : ''}}" hover-class="hover-class" data-item="{{item}}" bindtap="tapItem">
+    <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="labels" wx:if="{{graphics}}">
+            <view class="label">
+                <image src="{{likeSrc}}"></image>
+                <view>{{item.collectionCount || "喜欢"}}</view>
+            </view>
+            <view class="label">
+                <image src="{{homeSrc}}"></image>
+                <view>{{item.user.username}}</view>
+            </view>
+            <view class="label">
+                <image src="{{timeSrc}}"></image>
+                <view>{{filters.TimeBefore(item.createdAt)}}</view>
+            </view>
+        </view>
+        <view class='labels' wx:else>
+            <text>
+                {{item.collectionCount}}人喜欢 · {{item.user.username}} · {{filters.TimeBefore(item.createdAt)}}
+            </text>
+        </view>
+    </view>
+    <image mode="aspectFill" class="inset" src="{{filters.ShowSrc(item.screenshot)}}" wx:if="{{item.screenshot}}" />
+</view>

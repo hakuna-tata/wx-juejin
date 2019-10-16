@@ -1,1 +1,21 @@
-/* pages/search/search.wxss */
+.hot-card{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90rpx;
+    padding: 0 30rpx;
+    font-size: 30rpx;
+    border-bottom: 1px solid #efefef;
+}
+
+.hot-card .l {
+  display: flex;
+  align-items: center;
+}
+
+.hot-card .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}

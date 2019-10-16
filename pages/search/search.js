@@ -1,66 +1,77 @@
-// pages/search/search.js
+import { SearchModel } from '../../models/SearchModel.js'
+
+const SearchClass = new SearchModel()
+
 Page({
 
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        hotSrc:"images/pin_hot.png",
+        rankList:[],
+        scrollTop: 0,
+        locked: false,
+        hasMore:true
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
+    onShow () {
+        this.setData({
+            auth: wx.getStorageSync('auth'),
+        })
+        if(!this.data.scrollTop){
+            wx.showLoading({
+                title: '数据加载中'
+            })
+            this._getEntryByRank()
+        }
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
     onReachBottom: function () {
-
+        this._getEntryByRank()
     },
 
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
+    onPageScroll(e) {
+        this.setData({
+            scrollTop: e.scrollTop,
+        })
+    },
 
+    _getEntryByRank(){
+        let auth = this.data.auth
+        if (this.data.locked) {
+            return
+        }
+
+        let rankList = this.data.rankList
+        if(!this.data.rankList.length){
+            rankList = [{ rankIndex: "" }]
+        }
+        let rankIndex = (rankList.slice(-1)[0].rankIndex) || ""
+
+        if(this.data.hasMore){
+            this.setData({
+                locked: true
+            })
+            SearchClass.getEntryByRank({
+                uid: auth.uid,
+                device_id: auth.client_id,
+                token: auth.token,
+                rankIndex
+            }).then(res => {
+                if (res.s !== 1){
+                    this.setData({
+                        hasMore:false
+                    })
+                }
+                this.setData({
+                    rankList: this.data.rankList.concat(res.d.entrylist),
+                    locked: false
+                })
+                wx.hideLoading()
+            }).catch(() => {
+                this.setData({
+                    locked: false
+                })
+                wx.hideLoading()
+            })
+        } 
     }
 })

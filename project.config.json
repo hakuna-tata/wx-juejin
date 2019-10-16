@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -66,9 +66,16 @@
 					"scene": null
 				},
 				{
-					"id": 2,
+					"id": -1,
 					"name": "发现",
 					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "沸点",
+					"pathName": "pages/feidian/feidian",
 					"query": "",
 					"scene": null
 				}

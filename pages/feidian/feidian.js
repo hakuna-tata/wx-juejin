@@ -12,17 +12,11 @@ Page({
         postList:[]
     },
 
-    onLoad: function (options) {
+    onShow: function () {
         this.setData({
             auth: wx.getStorageSync('auth'),
         })
-        this._initSwiper()
-        this._getHotRecommendList()
-        this._getDongTaiList(this.data.after)
-    },
-
-    onShow: function () {
-        if (!this.data.scrollTop && this.data.after) {
+        if (!this.data.scrollTop) {
             wx.startPullDownRefresh({})
         }
     },
@@ -32,6 +26,9 @@ Page({
             after: "",
             postList: []
         })
+        if(!this.data.recommendList.length){
+            this._getHotRecommendList()
+        }
         this._initSwiper()
         this._getDongTaiList(this.data.after)
     },
@@ -70,7 +67,7 @@ Page({
         let auth = this.data.auth
         FeiDianClass.getHotRecommendList({
             uid: auth.uid,
-            device_id: auth.clientId,
+            device_id: auth.client_id,
             client_id: auth.client_id,
             token: auth.token,
             src: 'web',

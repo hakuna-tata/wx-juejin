@@ -1,4 +1,6 @@
 {
     "navigationBarTitleText": "发现",
-    "usingComponents": {}
+    "usingComponents": {
+        "w-searchItem":"/components/searchItem/index"
+    }
 }

@@ -1,1 +1,13 @@
-<text>pages/search/search.wxml</text>
+<view class="container">
+    <view class="hot-card">
+        <view class="l">
+            <image class="icon" src="{{hotSrc}}"></image>
+            <view>热门文章</view>
+        </view>
+    </view>
+    <view>
+        <block wx:for="{{rankList}}" wx:key="{{index}}">
+            <w-searchItem item="{{item}}" graphics="{{false}}"/>
+        </block>
+    </view>
+</view>
