@@ -1,0 +1,31 @@
+<view class="container">
+    <navigator url="/pages/login/login"  wx:if="{{!Login}}">
+        <view class="guide">
+            <view class="l">
+                <view class="t">登录账号</view>
+                <view class="c">收藏文章，同步阅读记录，数据永不丢失</view>
+            </view>
+            <view class="r">登录</view>
+        </view>
+    </navigator>
+    <view class="hot" wx:if="{{hotRecomment.length && hotRecommendShow}}">
+        <view class="btitle">
+            <view class="l">
+                <image class="icon" src="{{hotRecSrc}}"></image>
+                <view>热门推荐</view>
+            </view>
+            <view class="r">
+                <image catchtap="refreshHot" class="refresh {{rotate}}" src="{{refreshSrc}}"></image>
+                <image catchtap="closeHot" class="close" src="{{closeSrc}}"></image>
+            </view>
+        </view>
+        <block wx:for="{{hotRecomment}}" wx:key="{{index}}">
+            <w-searchItem  item="{{item}}" graphics="{{true}}"/>
+        </block>
+    </view>
+    <view class="timeline">
+        <block  wx:for="{{timeline}}" wx:key="{{index}}">
+            <w-homeItem item="{{item}}"/>
+        </block>
+    </view>
+</view>

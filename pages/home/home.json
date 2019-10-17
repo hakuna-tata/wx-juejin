@@ -2,6 +2,7 @@
     "navigationBarTitleText": "首页",
     "enablePullDownRefresh": true,
     "usingComponents": {
+        "w-searchItem":"/components/searchItem/index",
         "w-homeItem":"/components/homeItem/index"
     }
 }

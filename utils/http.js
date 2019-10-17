@@ -41,7 +41,7 @@ export class HTTP{
     _show_error(error){
         wx.showToast({
             title: tips[error] || "网络开小差,请稍后再试", 
-            icon:'none',
+            icon:"none",
             duration:2000
         }) 
     }

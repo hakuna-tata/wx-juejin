@@ -10,7 +10,7 @@ App({
             // 沸点
             shortMsgMsRequestUrl: 'https://short-msg-ms.juejin.im/v1',
             dongtaiListRequestUrl: 'https://web-api.juejin.im/query',
-            // 发现
+            // // 首页 发现
             timelineRequestUrl: 'https://timeline-merger-ms.juejin.im/v1',
             // 小册
             xiaoceRequestUrl: 'https://xiaoce-timeline-api-ms.juejin.im/v1',

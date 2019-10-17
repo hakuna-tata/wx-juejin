@@ -1,2 +1,39 @@
-
-<text>components/homeItem/index.wxml</text>
+<wxs module="filters" src="../../filters/filter.wxs"></wxs>
+<view class="item" hover-class="hover-class" data-item="{{item}}" catchtap="">
+    <view class="header">
+        <view class="name" data-item="{{item}}" catchtap="">
+            <image mode="aspectFill" src="{{item.user.avatarLarge || avatarSrc }}"></image>
+            <view>{{item.user.username}}</view>
+        </view>
+        <view class="type">{{tools.Join(item.tags, "title", " / ")}}</view>
+    </view>
+    <view class="content">
+        <view class="text">
+            <view class="title">{{item.title}}</view>
+            <view class="desc">{{item.content}}</view>
+        </view>
+        <image mode="aspectFill" class="img" src="{{filters.ShowSrc(item.screenshot)}}" wx:if="{{item.screenshot}}"></image>
+    </view>
+    <view class="footer">
+        <view class="label">
+            <image src="{{likeSrc}}"></image>
+            <view>{{item.collectionCount || "喜欢"}}</view>
+        </view>
+        <view class="label">
+            <image src="{{commentSrc}}"></image>
+            <view>{{item.commentsCount || "评论"}}</view>
+        </view>
+  </view>
+</view>
+<wxs module="tools">
+    var Join = function (arr, item, separator) {
+        arr = arr || [];
+        // 最多取前两个 tag
+        return arr.slice(0, 2).map(function(i){
+            return i[item];
+        }).join(separator);
+    }
+    module.exports = {
+        Join: Join
+    }
+</wxs>

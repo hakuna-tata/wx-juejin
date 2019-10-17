@@ -57,6 +57,11 @@ Page({
                 rankIndex
             }).then(res => {
                 if (res.s !== 1){
+                    wx.showToast({
+                        title: res.m.toString(),
+                        icon: "none",
+                        duration: 2000
+                    })
                     this.setData({
                         hasMore:false
                     })
