@@ -3,6 +3,7 @@
         <view class="l">
             <image class="icon" src="{{hotSrc}}"></image>
             <view>热门文章</view>
+            <!-- <van-button type="primary">按钮</van-button> -->
         </view>
     </view>
     <view>
