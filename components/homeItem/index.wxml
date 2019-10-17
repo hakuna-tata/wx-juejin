@@ -2,7 +2,7 @@
 <view class="item" hover-class="hover-class" data-item="{{item}}" catchtap="">
     <view class="header">
         <view class="name" data-item="{{item}}" catchtap="">
-            <image mode="aspectFill" src="{{item.user.avatarLarge || avatarSrc }}"></image>
+            <image mode="aspectFill" src="{{filters.ShowSrc(item.user.avatarLarge) || avatarSrc }}"></image>
             <view>{{item.user.username}}</view>
         </view>
         <view class="type">{{tools.Join(item.tags, "title", " / ")}}</view>
@@ -29,7 +29,7 @@
     var Join = function (arr, item, separator) {
         arr = arr || [];
         // 最多取前两个 tag
-        return arr.slice(0, 2).map(function(i){
+        return arr.slice(0, 2).map(function (i) {
             return i[item];
         }).join(separator);
     }
